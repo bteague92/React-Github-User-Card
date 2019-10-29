@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-const UserCard = () => {
+const MainUserCard = () => {
   return (
     <div>
       <img src="#"></img>
@@ -15,4 +15,4 @@ const UserCard = () => {
   );
 };
 
-export default UserCard;
+export default MainUserCard;
