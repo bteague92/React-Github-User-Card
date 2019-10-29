@@ -66,18 +66,22 @@ class App extends React.Component {
   render() {
     return (
       <div className="allCards">
-        <MainUserCard
-          image={this.state.mainImg}
-          name={this.state.mainName}
-          bio={this.state.mainBio}
-          location={this.state.mainLocation}
-          followers={this.state.mainFollowers}
-          following={this.state.mainFollowing}
-          link={this.state.mainLink}
-        />
-        {this.state.mainFollowersArr.map(f => (
-          <UserCard image={f.avatar_url} name={f.login} link={f.html_url} />
-        ))}
+        <div className="topCard">
+          <MainUserCard
+            image={this.state.mainImg}
+            name={this.state.mainName}
+            bio={this.state.mainBio}
+            location={this.state.mainLocation}
+            followers={this.state.mainFollowers}
+            following={this.state.mainFollowing}
+            link={this.state.mainLink}
+          />
+        </div>
+        <div className="userCards">
+          {this.state.mainFollowersArr.map(f => (
+            <UserCard image={f.avatar_url} name={f.login} link={f.html_url} />
+          ))}
+        </div>
       </div>
     );
   }

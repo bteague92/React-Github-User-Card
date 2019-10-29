@@ -28,6 +28,12 @@
   background: black;
 }
 
+.topCard {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
 .mainCard {
   width: 60%;
   display: flex;
@@ -44,18 +50,37 @@
   width: 80%;
 }
 
+.userCards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.userCards {
+  display: flex;
+  justify-content: space-around;
+}
+
 .userCard {
-  width: 44%;
+  width: 27%;
   display: flex;
   flex-direction: column;
   align-items: center;
   background: white;
-  border-radius: 50px;
+  border-radius: 1vw;
   border: 1px solid black;
   margin: 2%;
   line-height: 1px;
 }
 
 .userCard img {
-  width: 80%;
+  width: 70%;
+}
+
+.userCard p {
+  font-size: 1.2vw;
+}
+
+.userCard h1 {
+  font-size: 3vw;
 }
