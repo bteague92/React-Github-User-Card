@@ -20,3 +20,42 @@
 .App-link {
   color: #09d3ac;
 }
+
+.allCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background: black;
+}
+
+.mainCard {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  border-radius: 50px;
+  border: 1px solid black;
+  margin: 3%;
+  line-height: 1px;
+}
+
+.mainCard img {
+  width: 80%;
+}
+
+.userCard {
+  width: 44%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  border-radius: 50px;
+  border: 1px solid black;
+  margin: 2%;
+  line-height: 1px;
+}
+
+.userCard img {
+  width: 80%;
+}

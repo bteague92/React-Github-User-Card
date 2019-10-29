@@ -3,13 +3,10 @@ import ReactDOM from "react-dom";
 
 const UserCard = props => {
   return (
-    <div>
+    <div className="userCard">
       <img src={props.image}></img>
       <h1>{props.name}</h1>
-      <h2>{props.bio}</h2>
-      <h3>Location: {props.location}</h3>
-      <h4>Followers: {props.followers}</h4>
-      <h4>Following: {props.following}</h4>
+
       <p>
         Profile Link: <a>{props.link}</a>
       </p>
