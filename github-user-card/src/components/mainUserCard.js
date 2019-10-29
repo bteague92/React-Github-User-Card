@@ -1,16 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-const MainUserCard = () => {
+const MainUserCard = props => {
   return (
     <div>
-      <img src="#"></img>
-      <h1>name</h1>
-      <h2>bio</h2>
-      <h3>location</h3>
-      <h4>followers</h4>
-      <h4>following</h4>
-      <a>profile link</a>
+      <img src={props.image}></img>
+      <h1>{props.name}</h1>
+      <h2>{props.bio}</h2>
+      <h3>Location: {props.location}</h3>
+      <h4>Followers: {props.followers}</h4>
+      <h4>Following: {props.following}</h4>
+      <p>
+        Profile Link: <a>{props.link}</a>
+      </p>
     </div>
   );
 };
