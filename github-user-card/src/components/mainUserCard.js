@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 const MainUserCard = props => {
   return (
     <div className="mainCard">
-      <img src={props.image}></img>
+      <img src={props.pic}></img>
       <h1>{props.name}</h1>
       <h2>{props.bio}</h2>
       <h3>Location: {props.location}</h3>

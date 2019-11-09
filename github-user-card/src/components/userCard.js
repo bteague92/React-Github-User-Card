@@ -2,9 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 const UserCard = props => {
+
+  const clickHandler = () => {
+    props.setMPerson(props.name);
+  }
+
   return (
-    <div className="userCard">
-      <img src={props.image}></img>
+    <div onClick={clickHandler} className="userCard">
+      <img src={props.img}></img>
       <h1>{props.name}</h1>
 
       <p>

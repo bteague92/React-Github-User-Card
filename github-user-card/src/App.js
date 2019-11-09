@@ -1,90 +1,55 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
 import UserCard from "./components/userCard.js";
 import MainUserCard from "./components/mainUserCard.js";
+import Header from "./components/header";
+import Search from "./components/search";
 
-class App extends React.Component {
-  state = {
-    data: [],
-    mainUser: "",
-    mainFollowersArr: [],
-    mainImg: "",
-    mainName: "",
-    mainBio: "",
-    mainLocation: "",
-    mainFollowers: "",
-    mainFollowing: "",
-    mainLink: "",
+const App = () => {
 
-    user: "",
-    bigArray: []
-  };
+  const [followers, setFollowers] = useState([]);
+  const [mPerson, setMPerson] = useState('bteague92');
+  const [mPersonData, setMPersonData] = useState({})
 
-  componentDidMount() {
+  useEffect(() => {
     axios
-      .get(`https://api.github.com/users/bteague92`)
+      .get(`https://api.github.com/users/${mPerson}`)
       .then(res => {
-        console.log(res);
-        this.setState({
-          data: res.data,
-          mainImg: res.data.avatar_url,
-          mainName: res.data.name,
-          mainBio: res.data.bio,
-          mainLocation: res.data.location,
-          mainFollowers: res.data.followers,
-          mainFollowing: res.data.following,
-          mainLink: res.data.html_url
-        });
+        console.log("reData", res.data);
+        setMPersonData(res.data);
       })
       .catch(err => console.log(err));
+  }, [mPerson]);
 
-    axios.get(`https://api.github.com/users/bteague92/followers`).then(res => {
-      console.log(res);
-      this.setState({
-        mainFollowersArr: res.data
+
+  useEffect(() => {
+    axios
+      .get(`https://api.github.com/users/${mPerson}/followers`)
+      .then(res => {
+        console.log(res.data);
+        setFollowers(res.data);
       });
-      console.log("this is mainarr", this.state.mainFollowersArr);
+  }, [mPerson]);
 
-      // this.state.mainFollowersArr.map(f => {}).catch(err => console.log(err));
-    });
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    //// conditional that causes rerender upon changes
-  }
-
-  clickHandler() {
-    ///// when a profile is clicked
-  }
-
-  submitHandler() {
-    //// when a username is submitted
-  }
-
-  render() {
-    return (
-      <div className="allCards">
-        <div className="topCard">
-          <MainUserCard
-            image={this.state.mainImg}
-            name={this.state.mainName}
-            bio={this.state.mainBio}
-            location={this.state.mainLocation}
-            followers={this.state.mainFollowers}
-            following={this.state.mainFollowing}
-            link={this.state.mainLink}
-          />
-        </div>
-        <div className="userCards">
-          {this.state.mainFollowersArr.map(f => (
-            <UserCard image={f.avatar_url} name={f.login} link={f.html_url} />
-          ))}
-        </div>
+  return (
+    <div className="allCards">
+      <div className="topCard">
+        <Header />
+        <Search setMPerson={setMPerson} />
+        <MainUserCard name={mPersonData.name} pic={mPersonData.avatar_url} bio={mPersonData.bio} link={mPersonData.html_url} followers={mPersonData.followers} following={mPersonData.following} location={mPersonData.location} username={mPersonData.login} />
       </div>
-    );
-  }
+      <div>
+        <h1 className="followersLine">{mPersonData.name}'s Followers:({followers.length})</h1>
+        <h2 className="clickLine">(click one and see what happens)</h2>
+      </div>
+      <div className="userCards">
+        {followers.map(f => (
+          <UserCard setMPerson={setMPerson} user={f} img={f.avatar_url} name={f.login} link={f.html_url} />
+        ))}
+      </div>
+    </div >
+  );
 }
 
 export default App;
