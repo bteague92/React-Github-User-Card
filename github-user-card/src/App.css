@@ -1,0 +1,142 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.allCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background: rgb(87, 87, 87);
+}
+
+.header{
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 2.4vw;
+  background:rgb(46, 46, 46);
+  width: 100vw;
+  margin-bottom: 30px;
+}
+
+.topCard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainCard {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgb(46, 46, 46);
+  color: white;
+  border-radius: 10px;
+  border: 1px solid black;
+  margin: 3%;
+  line-height: 1px;
+  word-wrap: break-word;
+  padding: 2%;
+}
+
+.mainCard h1{
+  margin: 20px 0 20px 0;
+}
+
+.mainCard h2{
+  font-size: 2vw;
+  word-wrap: break-word;
+  line-height: 20px;
+  text-align: center;
+}
+
+.mainCard h3{
+  font-size: 1.8vw;
+  margin: 1vw 0 1vw 0;
+}
+
+.mainCard h4{
+  font-size: 1.7vw;
+  margin: 1vw 0 1vw 0;
+}
+
+.mainCard img {
+  width: 80%;
+  margin-top: 25px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.followersLine{
+  color: white;
+  font-size: 4vw;
+  border-bottom: 2px solid white;
+  padding: 2%;
+  text-align: center;
+}
+
+.clickLine{
+  color:white;
+  text-align: center;
+}
+
+.userCards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.userCards {
+  display: flex;
+  justify-content: space-around;
+}
+
+.userCard {
+  width: 27%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgb(46, 46, 46);
+  color: white;
+  border-radius: 1vw;
+  border: 1px solid black;
+  margin: 2%;
+  line-height: 1px;
+}
+
+.userCard img {
+  width: 70%;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.userCard p {
+  font-size: 1.2vw;
+  margin-bottom: 20px;
+}
+
+.userCard h1 {
+  font-size: 3vw;
+}
